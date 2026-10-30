@@ -1,3 +1,5 @@
+package MergeSort;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -5,7 +7,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Main {
-    
     public static void main(String[] args) {
         // Edge cases
         runTest("Empty list", new ArrayList<Integer>());

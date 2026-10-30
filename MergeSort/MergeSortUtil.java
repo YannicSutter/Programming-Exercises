@@ -1,3 +1,5 @@
+package MergeSort;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +56,7 @@ public class MergeSortUtil {
                     if (split.get(i).get(pointer1).compareTo(split.get(i + 1).get(pointer2)) < 0) {
                         temp.get(i / 2).add(split.get(i).get(pointer1));
                         pointer1++;
-                    }
-                    else {
+                    } else {
                         temp.get(i / 2).add(split.get(i + 1).get(pointer2));
                         pointer2++;
                     }
@@ -74,7 +75,7 @@ public class MergeSortUtil {
             split = temp;
             temp = new ArrayList<>();
         }
-        
+
         return split.get(0);
     }
 }

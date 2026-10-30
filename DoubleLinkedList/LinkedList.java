@@ -1,26 +1,21 @@
-public class LinkedList<T>
-{
+package DoubleLinkedList;
+
+public class LinkedList<T> {
     private Node<T> head;
     private Node<T> tail;
     private int size = 0;
-    
 
-    public LinkedList()
-    {
+    public LinkedList() {
 
     }
 
-    public Node<T> insertNode(T data)
-    {
+    public Node<T> insertNode(T data) {
         Node<T> node = new Node<>(data);
 
-        if (head == null)
-        {
+        if (head == null) {
             head = node;
             tail = node;
-        }
-        else
-        {
+        } else {
             tail.setNextNode(node);
             node.setPreviousNode(tail);
             tail = node;
@@ -29,31 +24,23 @@ public class LinkedList<T>
         return tail;
     }
 
-    public void removeHead()
-    {
-        if (size == 1 || size == 0)
-        {
+    public void removeHead() {
+        if (size == 1 || size == 0) {
             head = null;
             tail = null;
             size = 0;
-        }
-        else
-        {
+        } else {
             head = head.getNextNode();
             size--;
         }
     }
 
-    public void removeTail()
-    {
-        if (size == 1 || size == 0)
-        {
+    public void removeTail() {
+        if (size == 1 || size == 0) {
             head = null;
             tail = null;
             size = 0;
-        }
-        else
-        {
+        } else {
             tail.getPreviousNode().setNextNode(null);
             tail = tail.getPreviousNode();
             size--;
@@ -61,13 +48,11 @@ public class LinkedList<T>
     }
 
     // GET / SET
-    public Node<T> getHead()
-    {
+    public Node<T> getHead() {
         return head;
     }
 
-    public int size()
-    {
+    public int size() {
         return size;
     }
 }

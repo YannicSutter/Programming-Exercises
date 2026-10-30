@@ -1,3 +1,5 @@
+package DoubleLinkedList;
+
 public class Main {
     public static void main(String[] args) {
         // ---- Case 1: normal insert + print ----
@@ -65,7 +67,8 @@ public class Main {
         // ---- Case 7: removing everything down to empty ----
         System.out.println("\n=== Test 7: Remove all elements one by one ===");
         LinkedList<Integer> drainList = new LinkedList<>();
-        for (int i = 0; i < 5; i++) drainList.insertNode(i);
+        for (int i = 0; i < 5; i++)
+            drainList.insertNode(i);
         while (drainList.size() > 0) {
             drainList.removeHead();
         }
@@ -73,11 +76,11 @@ public class Main {
         System.out.println("Head is null: " + (drainList.getHead() == null));
     }
 
-private static void printList(LinkedList<Integer> list) {
-    Node<Integer> current = list.getHead();
-    while (current != null) {
-        System.out.println("Node value: " + current.getData());
-        current = current.getNextNode();
+    private static void printList(LinkedList<Integer> list) {
+        Node<Integer> current = list.getHead();
+        while (current != null) {
+            System.out.println("Node value: " + current.getData());
+            current = current.getNextNode();
+        }
     }
-}
 }
