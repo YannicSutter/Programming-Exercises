@@ -6,8 +6,7 @@ public class MergeSortUtil {
     public static <T extends Comparable<T>> List<T> mergeSort(List<T> list) {
         // Checking list size
         if (list.size() == 0) {
-            System.out.println("List is of size 0");
-            return null;
+            return list;
         }
 
         // Splitting the list into pairs of 2
@@ -71,10 +70,9 @@ public class MergeSortUtil {
                     temp.get(i / 2).add(split.get(i + 1).get(pointer2));
                     pointer2++;
                 }
-
-                split = temp;
-                temp = new ArrayList<>();
             }
+            split = temp;
+            temp = new ArrayList<>();
         }
         
         return split.get(0);
